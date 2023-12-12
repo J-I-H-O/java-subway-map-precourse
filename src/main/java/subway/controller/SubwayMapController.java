@@ -7,5 +7,7 @@ public class SubwayMapController {
     public void run() {
         OutputView.printMainMenus();
         InputView.inputMainMenu();
+
+        OutputView.printStationManageMenus();
     }
 }
