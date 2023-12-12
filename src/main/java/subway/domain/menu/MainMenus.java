@@ -8,7 +8,7 @@ public enum MainMenus {
     MANAGE_LINE("2", "노선 관리"),
     MANAGE_SECTION("3", "구간 관리"),
     PRINT_SECTIONS("4", "지하철 노선도 출력"),
-    EXIT("Q", "종료");
+    QUIT("Q", "종료");
 
     private static final String INVALID_COMMAND_ERROR_MESSAGE = "[ERROR] 선택할 수 없는 기능입니다.";
 
@@ -40,5 +40,13 @@ public enum MainMenus {
                 .forEach(value -> stringBuilder.append(value.toString()));
 
         return stringBuilder.toString();
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }

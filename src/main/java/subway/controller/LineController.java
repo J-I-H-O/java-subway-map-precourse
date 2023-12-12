@@ -1,6 +1,6 @@
 package subway.controller;
 
-public class StationController {
+public class LineController {
     public void run() {
 
     }
