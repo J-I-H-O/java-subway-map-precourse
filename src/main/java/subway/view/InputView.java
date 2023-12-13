@@ -10,6 +10,9 @@ public class InputView {
     private static final String INPUT_MENU_MESSAGE = "## 원하는 기능을 선택하세요.";
     private static final String INPUT_NEW_STATION_NAME_MESSAGE = "## 등록할 역 이름을 입력하세요.";
     private static final String INPUT_STATION_NAME_TO_DELETE_MESSAGE = "## 삭제할 역 이름을 입력하세요.";
+    private static final String INPUT_NEW_LINE_NAME_MESSAGE = "## 등록할 노선 이름을 입력하세요.";
+    private static final String INPUT_UPBOUND_STATION_NAME_MESSAGE = "## 등록할 노선의 상행 종점역 이름을 입력하세요.";
+    private static final String INPUT_DOWNBOUND_STATION_NAME_MESSAGE = "## 등록할 노선의 하행 종점역 이름을 입력하세요.";
 
     static final Scanner scanner = new Scanner(System.in);
 
@@ -47,31 +50,13 @@ public class InputView {
     }
 
     public static String inputNewStationName() {
-        String input = null;
-
-        try {
-            System.out.println("\n" + INPUT_NEW_STATION_NAME_MESSAGE);
-            input = scanner.nextLine();
-        } catch (IllegalArgumentException e) {
-            System.out.println("\n" + e.getMessage() + "\n");
-            inputNewStationName();
-        }
-
-        return input;
+        System.out.println("\n" + INPUT_NEW_STATION_NAME_MESSAGE);
+        return scanner.nextLine();
     }
 
     public static String inputStationNameToDelete() {
-        String input = null;
-
-        try {
-            System.out.println("\n" + INPUT_STATION_NAME_TO_DELETE_MESSAGE);
-            input = scanner.nextLine();
-        } catch (IllegalArgumentException e) {
-            System.out.println("\n" + e.getMessage() + "\n");
-            inputStationNameToDelete();
-        }
-
-        return input;
+        System.out.println("\n" + INPUT_STATION_NAME_TO_DELETE_MESSAGE);
+        return scanner.nextLine();
     }
 
     public static String inputLineManageMenu() {
@@ -87,5 +72,20 @@ public class InputView {
         }
 
         return input;
+    }
+
+    public static String inputNewLineName() {
+        System.out.println("\n" + INPUT_NEW_LINE_NAME_MESSAGE);
+        return scanner.nextLine();
+    }
+
+    public static String inputUpboundStation() {
+        System.out.println("\n" + INPUT_UPBOUND_STATION_NAME_MESSAGE);
+        return scanner.nextLine();
+    }
+
+    public static String inputDownboundStation() {
+        System.out.println("\n" + INPUT_DOWNBOUND_STATION_NAME_MESSAGE);
+        return scanner.nextLine();
     }
 }

@@ -2,10 +2,7 @@ package subway.domain;
 
 import subway.view.OutputView;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class StationRepository {
     private static final List<Station> stations = new ArrayList<>();
@@ -29,5 +26,12 @@ public class StationRepository {
         return stations()
                 .stream()
                 .anyMatch(station -> station.getName().equals(name));
+    }
+
+    public static Optional<Station> findByName(String name) {
+        return stations()
+                .stream()
+                .filter(station -> station.getName().equals(name))
+                .findFirst();
     }
 }
