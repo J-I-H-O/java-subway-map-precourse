@@ -40,4 +40,12 @@ public enum StationManageMenus {
 
         return stringBuilder.toString();
     }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }
