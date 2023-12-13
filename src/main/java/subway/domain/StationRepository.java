@@ -1,5 +1,7 @@
 package subway.domain;
 
+import subway.view.OutputView;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,6 +16,7 @@ public class StationRepository {
 
     public static void addStation(Station station) {
         stations.add(station);
+        OutputView.printStationCreatedMessage();
     }
 
     public static boolean deleteStation(String name) {
