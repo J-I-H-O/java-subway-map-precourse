@@ -32,7 +32,7 @@ public enum StationManageMenus {
         return command + ". " + message + "\n";
     }
 
-    public static String printStationManageMenus() {
+    public static String printMenus() {
         StringBuilder stringBuilder = new StringBuilder();
 
         Arrays.stream(values())

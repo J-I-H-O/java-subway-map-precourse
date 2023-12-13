@@ -33,7 +33,7 @@ public enum MainMenus {
         return command + ". " + message + "\n";
     }
 
-    public static String printMainMenus() {
+    public static String printMenus() {
         StringBuilder stringBuilder = new StringBuilder();
 
         Arrays.stream(values())

@@ -1,5 +1,6 @@
 package subway.view;
 
+import subway.domain.menu.LineManageMenus;
 import subway.domain.menu.MainMenus;
 import subway.domain.menu.StationManageMenus;
 
@@ -68,6 +69,21 @@ public class InputView {
         } catch (IllegalArgumentException e) {
             System.out.println("\n" + e.getMessage() + "\n");
             inputStationNameToDelete();
+        }
+
+        return input;
+    }
+
+    public static String inputLineManageMenu() {
+        String input = null;
+
+        try {
+            System.out.println(INPUT_MENU_MESSAGE);
+            input = scanner.nextLine();
+            LineManageMenus.validateCommand(input);
+        } catch (IllegalArgumentException e) {
+            System.out.println("\n" + e.getMessage() + "\n");
+            inputLineManageMenu();
         }
 
         return input;
