@@ -16,16 +16,19 @@ public class StationController {
             String input = InputView.inputStationManageMenu();
             doActionByCommand(input);
         } catch (IllegalArgumentException e) {
+            System.out.println("\n" + e.getMessage());
             run();
         }
     }
 
     private void doActionByCommand(String command) {
         if (command.equals(StationManageMenus.ADD_STATION.getCommand())) {
-            stationService.addStation();
+            String name = InputView.inputNewStationName();
+            stationService.addStation(name);
         }
         if (command.equals(StationManageMenus.REMOVE_STATION.getCommand())) {
-
+            String name = InputView.inputStationNameToDelete();
+            stationService.deleteStation(name);
         }
         if (command.equals(StationManageMenus.PRINT_STATIONS.getCommand())) {
 

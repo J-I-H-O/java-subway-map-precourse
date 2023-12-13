@@ -20,6 +20,14 @@ public class StationRepository {
     }
 
     public static boolean deleteStation(String name) {
-        return stations.removeIf(station -> Objects.equals(station.getName(), name));
+        boolean isDeleted = stations.removeIf(station -> Objects.equals(station.getName(), name));
+        OutputView.printStationDeletedMessage();
+        return isDeleted;
+    }
+
+    public static boolean hasStation(String name) {
+        return stations()
+                .stream()
+                .anyMatch(station -> station.getName().equals(name));
     }
 }
