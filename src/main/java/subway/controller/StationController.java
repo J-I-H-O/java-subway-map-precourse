@@ -1,7 +1,5 @@
 package subway.controller;
 
-import subway.domain.Station;
-import subway.domain.StationRepository;
 import subway.domain.menu.StationManageMenus;
 import subway.service.StationService;
 import subway.view.InputView;
@@ -34,7 +32,7 @@ public class StationController {
             stationService.printStations();
         }
         if (command.equals(StationManageMenus.MOVE_BACK.getCommand())) {
-            return;
+            System.out.println();
         }
     }
 }
