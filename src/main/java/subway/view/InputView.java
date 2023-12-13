@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class InputView {
     private static final String INPUT_MENU_MESSAGE = "## 원하는 기능을 선택하세요.";
+    private static final String INPUT_NEW_STATION_NAME_MESSAGE = "## 등록할 역 이름을 입력하세요.";
 
     static final Scanner scanner = new Scanner(System.in);
 
@@ -38,6 +39,20 @@ public class InputView {
         } catch (IllegalArgumentException e) {
             System.out.println("\n" + e.getMessage() + "\n");
             inputStationManageMenu();
+        }
+
+        return input;
+    }
+
+    public static String inputNewStationName() {
+        String input = null;
+
+        try {
+            System.out.println("\n" + INPUT_NEW_STATION_NAME_MESSAGE);
+            input = scanner.nextLine();
+        } catch (IllegalArgumentException e) {
+            System.out.println("\n" + e.getMessage() + "\n");
+            inputNewStationName();
         }
 
         return input;

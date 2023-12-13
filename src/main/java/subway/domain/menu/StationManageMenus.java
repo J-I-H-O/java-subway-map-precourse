@@ -44,8 +44,4 @@ public enum StationManageMenus {
     public String getCommand() {
         return command;
     }
-
-    public String getMessage() {
-        return message;
-    }
 }
