@@ -31,7 +31,7 @@ public class StationController {
             stationService.deleteStation(name);
         }
         if (command.equals(StationManageMenus.PRINT_STATIONS.getCommand())) {
-
+            stationService.printStations();
         }
         if (command.equals(StationManageMenus.MOVE_BACK.getCommand())) {
             return;
