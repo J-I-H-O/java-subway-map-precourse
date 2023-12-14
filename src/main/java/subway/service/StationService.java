@@ -1,7 +1,7 @@
 package subway.service;
 
-import subway.domain.Station;
-import subway.domain.StationRepository;
+import subway.domain.station.Station;
+import subway.domain.station.StationRepository;
 import subway.view.OutputView;
 
 import java.util.List;

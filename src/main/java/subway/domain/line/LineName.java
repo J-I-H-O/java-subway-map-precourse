@@ -1,4 +1,4 @@
-package subway.domain;
+package subway.domain.line;
 
 public class LineName {
     private static final int MIN_NAME_LENGTH = 2;

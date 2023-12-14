@@ -1,6 +1,10 @@
 package subway.service;
 
-import subway.domain.*;
+import subway.domain.line.Line;
+import subway.domain.line.LineName;
+import subway.domain.line.LineRepository;
+import subway.domain.station.Station;
+import subway.domain.station.StationRepository;
 import subway.view.InputView;
 
 public class LineService {

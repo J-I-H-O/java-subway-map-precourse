@@ -1,6 +1,6 @@
 package subway.view;
 
-import subway.domain.Station;
+import subway.domain.station.Station;
 import subway.domain.menu.LineManageMenus;
 import subway.domain.menu.MainMenus;
 import subway.domain.menu.StationManageMenus;
