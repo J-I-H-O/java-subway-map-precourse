@@ -4,12 +4,13 @@ import subway.domain.station.Station;
 
 public class Line {
     private LineName name;
-    private Station upboundStation;
-    private Station downboundStation;
+    private Section section;
 
     public Line(LineName name, Station upboundStation, Station downboundStation) {
         validateBoundStations(upboundStation, downboundStation);
+
         this.name = name;
+        section = new Section(upboundStation, downboundStation);
     }
 
     // TODO: 구현
@@ -21,11 +22,7 @@ public class Line {
         return name.getName();
     }
 
-    public Station getUpboundStation() {
-        return upboundStation;
-    }
-
-    public Station getDownboundStation() {
-        return downboundStation;
+    public Section getSection() {
+        return section;
     }
 }

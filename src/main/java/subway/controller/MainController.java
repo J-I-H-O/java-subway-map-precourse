@@ -29,7 +29,7 @@ public class MainController {
         if (command.equals(MainMenus.MANAGE_SECTION.getCommand())) {
             sectionController.run();
         }
-        if (command.equals(MainMenus.PRINT_SECTIONS.getCommand())) {
+        if (command.equals(MainMenus.PRINT_TOTAL_INFORMS.getCommand())) {
             
         }
     }

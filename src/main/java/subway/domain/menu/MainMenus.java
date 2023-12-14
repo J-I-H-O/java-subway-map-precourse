@@ -7,7 +7,7 @@ public enum MainMenus {
     MANAGE_STATION("1", "역 관리"),
     MANAGE_LINE("2", "노선 관리"),
     MANAGE_SECTION("3", "구간 관리"),
-    PRINT_SECTIONS("4", "지하철 노선도 출력"),
+    PRINT_TOTAL_INFORMS("4", "지하철 노선도 출력"),
     QUIT("Q", "종료");
 
     private static final String INVALID_COMMAND_ERROR_MESSAGE = "[ERROR] 선택할 수 없는 기능입니다.";
