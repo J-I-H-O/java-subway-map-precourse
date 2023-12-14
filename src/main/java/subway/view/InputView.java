@@ -2,6 +2,7 @@ package subway.view;
 
 import subway.domain.menu.LineManageMenus;
 import subway.domain.menu.MainMenus;
+import subway.domain.menu.SectionManageMenus;
 import subway.domain.menu.StationManageMenus;
 
 import java.util.Scanner;
@@ -93,5 +94,20 @@ public class InputView {
     public static String inputLineNameToDelete() {
         System.out.println("\n" + INPUT_LINE_NAME_TO_DELETE_MESSAGE);
         return scanner.nextLine();
+    }
+
+    public static String inputSectionManageMenu() {
+        String input = null;
+
+        try {
+            System.out.println(INPUT_MENU_MESSAGE);
+            input = scanner.nextLine();
+            SectionManageMenus.validateCommand(input);
+        } catch (IllegalArgumentException e) {
+            System.out.println("\n" + e.getMessage() + "\n");
+            inputSectionManageMenu();
+        }
+
+        return input;
     }
 }
