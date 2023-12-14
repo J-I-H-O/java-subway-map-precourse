@@ -28,7 +28,7 @@ public class LineController {
 
         }
         if (command.equals(LineManageMenus.PRINT_LINES.getCommand())) {
-
+            lineService.printLines();
         }
         if (command.equals(StationManageMenus.MOVE_BACK.getCommand())) {
             System.out.println();
