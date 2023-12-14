@@ -22,6 +22,7 @@ public class OutputView {
     private static final String EMPTY_LINES_ERROR_MESSAGE = "[ERROR] 등록된 노선이 없습니다.";
     private static final String STATION_LIST_MESSAGE = "## 역 목록";
     private static final String LINE_LIST_MESSAGE = "## 노선 목록";
+    private static final String SECTION_ADDED_MESSAGE = "[INFO] 구간이 등록되었습니다.";
 
     public static void printMainMenus() {
         System.out.println(MAIN_MENU_MESSAGE);
@@ -81,5 +82,9 @@ public class OutputView {
     public static void printSectionManageMenus() {
         System.out.println("\n" + SECTION_MANAGE_MENU_MESSAGE);
         System.out.println(SectionManageMenus.printMenus());
+    }
+
+    public static void printSectionAddedMessage() {
+        System.out.println("\n" + SECTION_ADDED_MESSAGE + "\n");
     }
 }
