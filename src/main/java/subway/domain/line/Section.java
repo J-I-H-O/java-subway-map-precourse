@@ -42,6 +42,17 @@ public class Section {
         OutputView.printSectionDeletedMessage();
     }
 
+    public void validateDuplicate(Station station) {
+        String newStationName = station.getName();
+
+        boolean isDuplicate = section.stream()
+                .anyMatch(stationInLine -> stationInLine.getName().equals(newStationName));
+
+        if (isDuplicate) {
+            throw new IllegalArgumentException(DUPLICATE_STATION_ERROR_MESSAGE);
+        }
+    }
+
     private void validateMinimumSectionSize() {
         if (section.size() <= 2) {
             throw new IllegalArgumentException(MIN_SECTION_SIZE_ERROR_MESSAGE);
@@ -63,14 +74,12 @@ public class Section {
         }
     }
 
-    public void validateDuplicate(Station station) {
-        String newStationName = station.getName();
-
-        boolean isDuplicate = section.stream()
-                .anyMatch(stationInLine -> stationInLine.getName().equals(newStationName));
-
-        if (isDuplicate) {
-            throw new IllegalArgumentException(DUPLICATE_STATION_ERROR_MESSAGE);
-        }
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        section.forEach(station -> stringBuilder.append("[INFO] ")
+                .append(station.getName())
+                .append("\n"));
+        return stringBuilder.toString();
     }
 }

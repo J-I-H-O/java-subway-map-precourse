@@ -1,6 +1,7 @@
 package subway.controller;
 
 import subway.domain.menu.MainMenus;
+import subway.service.LineService;
 import subway.view.InputView;
 import subway.view.OutputView;
 
@@ -8,6 +9,7 @@ public class MainController {
     private final StationController stationController = new StationController();
     private final LineController lineController = new LineController();
     private final SectionController sectionController = new SectionController();
+    private final LineService lineService = new LineService();
 
     public void run() {
         String input;
@@ -30,7 +32,7 @@ public class MainController {
             sectionController.run();
         }
         if (command.equals(MainMenus.PRINT_TOTAL_INFORMS.getCommand())) {
-            
+            lineService.printTotalLineInfos();
         }
     }
 

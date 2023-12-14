@@ -42,17 +42,9 @@ public class InputView {
     }
 
     public static String inputStationManageMenu() {
-        String input = null;
-
-        try {
-            System.out.println(INPUT_MENU_MESSAGE);
-            input = scanner.nextLine();
-            StationManageMenus.validateCommand(input);
-        } catch (IllegalArgumentException e) {
-            System.out.println("\n" + e.getMessage() + "\n");
-            inputStationManageMenu();
-        }
-
+        System.out.println(INPUT_MENU_MESSAGE);
+        String input = scanner.nextLine();
+        StationManageMenus.validateCommand(input);
         return input;
     }
 
@@ -67,17 +59,9 @@ public class InputView {
     }
 
     public static String inputLineManageMenu() {
-        String input = null;
-
-        try {
-            System.out.println(INPUT_MENU_MESSAGE);
-            input = scanner.nextLine();
-            LineManageMenus.validateCommand(input);
-        } catch (IllegalArgumentException e) {
-            System.out.println("\n" + e.getMessage() + "\n");
-            inputLineManageMenu();
-        }
-
+        System.out.println(INPUT_MENU_MESSAGE);
+        String input = scanner.nextLine();
+        LineManageMenus.validateCommand(input);
         return input;
     }
 
@@ -102,17 +86,9 @@ public class InputView {
     }
 
     public static String inputSectionManageMenu() {
-        String input = null;
-
-        try {
-            System.out.println(INPUT_MENU_MESSAGE);
-            input = scanner.nextLine();
-            SectionManageMenus.validateCommand(input);
-        } catch (IllegalArgumentException e) {
-            System.out.println("\n" + e.getMessage() + "\n");
-            inputSectionManageMenu();
-        }
-
+        System.out.println(INPUT_MENU_MESSAGE);
+        String input = scanner.nextLine();
+        SectionManageMenus.validateCommand(input);
         return input;
     }
 

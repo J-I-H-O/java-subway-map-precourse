@@ -3,12 +3,14 @@ package subway.service;
 import subway.domain.line.Line;
 import subway.domain.line.LineName;
 import subway.domain.line.LineRepository;
+import subway.domain.line.Section;
 import subway.domain.station.Station;
 import subway.domain.station.StationRepository;
 import subway.view.InputView;
 import subway.view.OutputView;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LineService {
     private static final String NO_SUCH_STATION_ERROR_MESSAGE = "[ERROR] 해당 역이 존재하지 않습니다.";
@@ -44,5 +46,10 @@ public class LineService {
     public void printLines() {
         List<Line> lines = LineRepository.lines();
         OutputView.printLines(lines);
+    }
+
+    public void printTotalLineInfos() {
+        List<Line> lines = LineRepository.lines();
+        OutputView.printTotalLineInfos(lines);
     }
 }

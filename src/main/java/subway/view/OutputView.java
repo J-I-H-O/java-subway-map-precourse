@@ -16,14 +16,15 @@ public class OutputView {
     private static final String SECTION_MANAGE_MENU_MESSAGE = "## 구간 관리 화면";
     private static final String STATION_CREATED_MESSAGE = "[INFO] 지하철 역이 등록되었습니다.";
     private static final String LINE_CREATED_MESSAGE = "[INFO] 지하철 노선이 등록되었습니다.";
+    private static final String SECTION_ADDED_MESSAGE = "[INFO] 구간이 등록되었습니다.";
     private static final String STATION_DELETED_MESSAGE = "[INFO] 지하철 역이 삭제되었습니다.";
     private static final String LINE_DELETED_MESSAGE = "[INFO] 지하철 노선이 삭제되었습니다.";
+    private static final String SECTION_DELETED_MESSAGE = "[INFO] 구간이 삭제되었습니다.";
     private static final String EMPTY_STATIONS_ERROR_MESSAGE = "[ERROR] 등록된 역이 없습니다.";
     private static final String EMPTY_LINES_ERROR_MESSAGE = "[ERROR] 등록된 노선이 없습니다.";
     private static final String STATION_LIST_MESSAGE = "## 역 목록";
     private static final String LINE_LIST_MESSAGE = "## 노선 목록";
-    private static final String SECTION_ADDED_MESSAGE = "[INFO] 구간이 등록되었습니다.";
-    private static final String SECTION_DELETED_MESSAGE = "[INFO] 구간이 삭제되었습니다.";
+    private static final String ROUTE_MAP_MESSAGE = "## 지하철 노선도";
 
     public static void printMainMenus() {
         System.out.println(MAIN_MENU_MESSAGE);
@@ -91,5 +92,15 @@ public class OutputView {
 
     public static void printSectionDeletedMessage() {
         System.out.println("\n" + SECTION_DELETED_MESSAGE + "\n");
+    }
+
+    public static void printTotalLineInfos(List<Line> lines) {
+        System.out.println("\n" + ROUTE_MAP_MESSAGE);
+
+        lines.forEach(line -> {
+            System.out.println("[INFO] " + line.getName());
+            System.out.println("[INFO] ---");
+            System.out.println(line.getSection());
+        });
     }
 }
