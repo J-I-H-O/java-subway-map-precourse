@@ -15,9 +15,11 @@ public class InputView {
     private static final String INPUT_UPBOUND_STATION_NAME_MESSAGE = "## 등록할 노선의 상행 종점역 이름을 입력하세요.";
     private static final String INPUT_DOWNBOUND_STATION_NAME_MESSAGE = "## 등록할 노선의 하행 종점역 이름을 입력하세요.";
     private static final String INPUT_LINE_NAME_TO_DELETE_MESSAGE = "## 삭제할 노선 이름을 입력하세요.";
-    private static final String INPUT_SECTION_LINE_NAME = "## 노선을 입력하세요.";
-    private static final String INPUT_SECTION_STATION_NAME = "## 역이름을 입력하세요.";
-    private static final String INPUT_SECTION_INDEX = "## 순서를 입력하세요.";
+    private static final String INPUT_SECTION_LINE_NAME_MESSAGE = "## 노선을 입력하세요.";
+    private static final String INPUT_SECTION_STATION_NAME_MESSAGE = "## 역이름을 입력하세요.";
+    private static final String INPUT_SECTION_INDEX_MESSAGE = "## 순서를 입력하세요.";
+    private static final String INPUT_LINE_NAME_OF_SECTION_MESSAGE = "## 삭제할 구간의 노선을 입력하세요.";
+    private static final String INPUT_STATION_NAME_TO_DELETE_FROM_SECTION = "## 삭제할 구간의 역을 입력하세요.";
 
     static final Scanner scanner = new Scanner(System.in);
 
@@ -115,17 +117,27 @@ public class InputView {
     }
 
     public static String inputSectionLineName() {
-        System.out.println("\n" + INPUT_SECTION_LINE_NAME);
+        System.out.println("\n" + INPUT_SECTION_LINE_NAME_MESSAGE);
         return scanner.nextLine();
     }
 
     public static String inputSectionStationName() {
-        System.out.println("\n" + INPUT_SECTION_STATION_NAME);
+        System.out.println("\n" + INPUT_SECTION_STATION_NAME_MESSAGE);
         return scanner.nextLine();
     }
 
     public static String inputSectionIndex() {
-        System.out.println("\n" + INPUT_SECTION_INDEX);
+        System.out.println("\n" + INPUT_SECTION_INDEX_MESSAGE);
+        return scanner.nextLine();
+    }
+
+    public static String inputLineNameOfSection() {
+        System.out.println("\n" + INPUT_LINE_NAME_OF_SECTION_MESSAGE);
+        return scanner.nextLine();
+    }
+
+    public static String inputStationNameToDeleteFromSection() {
+        System.out.println("\n" + INPUT_STATION_NAME_TO_DELETE_FROM_SECTION);
         return scanner.nextLine();
     }
 }

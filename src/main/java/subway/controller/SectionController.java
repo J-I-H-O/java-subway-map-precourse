@@ -24,7 +24,7 @@ public class SectionController {
             sectionService.addSection();
         }
         if (command.equals(SectionManageMenus.REMOVE_SECTION.getCommand())) {
-
+            sectionService.deleteSection();
         }
         if (command.equals(SectionManageMenus.MOVE_BACK.getCommand())) {
             System.out.println();

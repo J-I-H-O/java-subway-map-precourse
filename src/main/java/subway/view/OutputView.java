@@ -23,6 +23,7 @@ public class OutputView {
     private static final String STATION_LIST_MESSAGE = "## 역 목록";
     private static final String LINE_LIST_MESSAGE = "## 노선 목록";
     private static final String SECTION_ADDED_MESSAGE = "[INFO] 구간이 등록되었습니다.";
+    private static final String SECTION_DELETED_MESSAGE = "[INFO] 구간이 삭제되었습니다.";
 
     public static void printMainMenus() {
         System.out.println(MAIN_MENU_MESSAGE);
@@ -86,5 +87,9 @@ public class OutputView {
 
     public static void printSectionAddedMessage() {
         System.out.println("\n" + SECTION_ADDED_MESSAGE + "\n");
+    }
+
+    public static void printSectionDeletedMessage() {
+        System.out.println("\n" + SECTION_DELETED_MESSAGE + "\n");
     }
 }

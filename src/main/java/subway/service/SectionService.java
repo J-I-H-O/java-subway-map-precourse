@@ -22,4 +22,16 @@ public class SectionService {
         String index = InputView.inputSectionIndex();
         line.getSection().addStationWithIndex(station, index);
     }
+
+    public void deleteSection() {
+        String lineName = InputView.inputLineNameOfSection();
+        Line line = LineRepository.findByName(lineName)
+                .orElseThrow(() -> new IllegalArgumentException(NO_SUCH_LINE_ERROR_MESSAGE));
+
+        String stationName = InputView.inputStationNameToDeleteFromSection();
+        Station station = StationRepository.findByName(stationName)
+                .orElseThrow(() -> new IllegalArgumentException(NO_SUCH_STATION_ERROR_MESSAGE));
+
+        line.getSection().deleteStationByName(station.getName());
+    }
 }
