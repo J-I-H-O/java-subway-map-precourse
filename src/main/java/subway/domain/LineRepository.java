@@ -1,5 +1,7 @@
 package subway.domain;
 
+import subway.view.OutputView;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,6 +16,7 @@ public class LineRepository {
 
     public static void addLine(Line line) {
         lines.add(line);
+        OutputView.printLineCreatedMessage();
     }
 
     public static boolean deleteLineByName(String name) {

@@ -4,31 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Line {
-    private String name;
-    private List<Station> stations = new ArrayList<>();
+    private LineName name;
+    private Station upboundStation;
+    private Station downboundStation;
 
-    public Line(String name) {
-        validateName(name);
-        fillStations();
+    public Line(LineName name, Station upboundStation, Station downboundStation) {
+        validateBoundStations(upboundStation, downboundStation);
         this.name = name;
-    }
-
-    // TODO: 구현, 상행 종점역과 하행 종점역 사이의 역들을 stations에 추가
-    private void fillStations() {
-        
-    }
-
-    // TODO: 구현
-    private void validateName(String name) {
-
     }
 
     // TODO: 구현
     private void validateBoundStations(Station upboundStation, Station downboundStation) {
-        
+        // 상행 종점역의 index는 하행 종점역의 index보다 작아야 함
     }
 
     public String getName() {
-        return name;
+        return name.getName();
+    }
+
+    public Station getUpboundStation() {
+        return upboundStation;
+    }
+
+    public Station getDownboundStation() {
+        return downboundStation;
     }
 }
