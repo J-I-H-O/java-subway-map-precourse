@@ -19,6 +19,8 @@ public class SectionService {
         Station station = StationRepository.findByName(stationName)
                 .orElseThrow(() -> new IllegalArgumentException(NO_SUCH_STATION_ERROR_MESSAGE));
 
+        line.getSection().validateDuplicate(station);
+
         String index = InputView.inputSectionIndex();
         line.getSection().addStationWithIndex(station, index);
     }
