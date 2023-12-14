@@ -19,6 +19,7 @@ public class OutputView {
     private static final String EMPTY_LINES_ERROR_MESSAGE = "[ERROR] 등록된 노선이 없습니다.";
     private static final String STATION_LIST_MESSAGE = "## 역 목록";
     private static final String LINE_LIST_MESSAGE = "## 노선 목록";
+    private static final String LINE_DELETED_MESSAGE = "[INFO] 지하철 노선이 삭제되었습니다.";
 
     public static void printMainMenus() {
         System.out.println(MAIN_MENU_MESSAGE);
@@ -69,5 +70,9 @@ public class OutputView {
         System.out.println(LINE_LIST_MESSAGE);
         lines.forEach(line -> System.out.println("[INFO] " + line.getName()));
         System.out.println();
+    }
+
+    public static void printLineDeletedMessage() {
+        System.out.println("\n" + LINE_DELETED_MESSAGE + "\n");
     }
 }

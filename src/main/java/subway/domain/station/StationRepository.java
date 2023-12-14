@@ -16,10 +16,9 @@ public class StationRepository {
         OutputView.printStationCreatedMessage();
     }
 
-    public static boolean deleteStation(String name) {
-        boolean isDeleted = stations.removeIf(station -> Objects.equals(station.getName(), name));
+    public static void deleteStation(String name) {
+        stations.removeIf(station -> Objects.equals(station.getName(), name));
         OutputView.printStationDeletedMessage();
-        return isDeleted;
     }
 
     public static boolean hasStation(String name) {

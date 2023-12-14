@@ -19,7 +19,14 @@ public class LineRepository {
         OutputView.printLineCreatedMessage();
     }
 
-    public static boolean deleteLineByName(String name) {
-        return lines.removeIf(line -> Objects.equals(line.getName(), name));
+    public static boolean hasLine(String name) {
+        return lines()
+                .stream()
+                .anyMatch(line -> line.getName().equals(name));
+    }
+
+    public static void deleteLineByName(String name) {
+        lines.removeIf(line -> Objects.equals(line.getName(), name));
+        OutputView.printLineDeletedMessage();
     }
 }

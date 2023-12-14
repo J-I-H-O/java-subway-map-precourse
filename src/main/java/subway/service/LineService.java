@@ -12,6 +12,7 @@ import java.util.List;
 
 public class LineService {
     private static final String NO_SUCH_STATION_ERROR_MESSAGE = "[ERROR] 해당 역이 존재하지 않습니다.";
+    private static final String NO_SUCH_LINE_ERROR_MESSAGE = "[ERROR] 해당 노선이 존재하지 않습니다.";
 
     public void addLine() {
         String name = InputView.inputNewLineName();
@@ -27,6 +28,17 @@ public class LineService {
 
         Line line = new Line(lineName, upboundStation, downBoundStation);
         LineRepository.addLine(line);
+    }
+
+    public void deleteLine() {
+        String name = InputView.inputLineNameToDelete();
+
+        if (LineRepository.hasLine(name)) {
+            LineRepository.deleteLineByName(name);
+            return;
+        }
+
+        throw new IllegalArgumentException(NO_SUCH_LINE_ERROR_MESSAGE);
     }
 
     public void printLines() {

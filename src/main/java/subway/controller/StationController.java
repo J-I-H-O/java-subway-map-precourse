@@ -21,12 +21,10 @@ public class StationController {
 
     private void doActionByCommand(String command) {
         if (command.equals(StationManageMenus.ADD_STATION.getCommand())) {
-            String name = InputView.inputNewStationName();
-            stationService.addStation(name);
+            stationService.addStation();
         }
         if (command.equals(StationManageMenus.REMOVE_STATION.getCommand())) {
-            String name = InputView.inputStationNameToDelete();
-            stationService.deleteStation(name);
+            stationService.deleteStation();
         }
         if (command.equals(StationManageMenus.PRINT_STATIONS.getCommand())) {
             stationService.printStations();

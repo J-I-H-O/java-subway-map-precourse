@@ -25,7 +25,7 @@ public class LineController {
             lineService.addLine();
         }
         if (command.equals(LineManageMenus.REMOVE_LINE.getCommand())) {
-
+            lineService.deleteLine();
         }
         if (command.equals(LineManageMenus.PRINT_LINES.getCommand())) {
             lineService.printLines();
